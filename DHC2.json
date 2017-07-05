@@ -1,0 +1,1259 @@
+{
+  "front-version": "2.5.2",
+  "version": 3,
+  "nodes": [
+    {
+      "type": "Project",
+      "id": "99EECA69-3B08-4907-BE48-8C0372790F6E",
+      "lastModified": "2017-06-14T15:00:03.387+08:00",
+      "name": "schedule"
+    },
+    {
+      "type": "Service",
+      "id": "FD09569D-213F-406D-B600-7D216645FD1B",
+      "lastModified": "2017-04-29T12:18:18.952+08:00",
+      "name": "quartz",
+      "parentId": "99EECA69-3B08-4907-BE48-8C0372790F6E"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.6.3:9004",
+        "path": "/quartz/shutdownJobs"
+      },
+      "id": "76F313ED-B49B-4CE6-8743-AC6A77FA89C3",
+      "lastModified": "2016-12-25T13:23:32.393+08:00",
+      "name": "关闭所有任务",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "61"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.6.3:9004",
+        "path": "/quartz/resumeJob"
+      },
+      "id": "3C313F01-68DA-485B-A755-8094D93E1766",
+      "lastModified": "2016-12-25T13:23:14.913+08:00",
+      "name": "恢复任务",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "61"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.6.3:9004",
+        "path": "/quartz/pauseJob"
+      },
+      "id": "9A453C02-481F-4C4B-AAEE-51724125318B",
+      "lastModified": "2016-12-25T13:22:23.084+08:00",
+      "name": "暂停任务",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \n        \"id\": 1,\n        \"custom\": \"00:00:30\",\n        \"week\": \"1,2,3,4,5,6,7\",\n  \t\t\"cs\":\"com.gomeplus.meipro.quartz.util.QuartzOne\",\n  \t\t\"group\":\"one\"\n  \n        \n    \n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:9004",
+        "path": "/quartz/start"
+      },
+      "id": "7691BED3-AC20-43E8-A0C3-DCFBF87DC9FB",
+      "lastModified": "2017-06-14T14:47:39.104+08:00",
+      "name": "添加quartz1",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \n        \"id\": 2,\n        \"custom\": \"00:00:30\",\n        \"week\": \"1,2,3,4,5,6,7\",\n  \t\t\"cs\":\"com.gomeplus.meipro.quartz.util.QuartzOne2\",\n  \t\t\"group\":\"two\"\n        \n    \n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:9006",
+        "path": "/quartz/start"
+      },
+      "id": "5A598EC2-20E7-4AA7-9878-92DEEC33E985",
+      "lastModified": "2017-06-14T14:53:20.506+08:00",
+      "name": "添加quartz2",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "\n{\n  \"id\":1,\n  \"group\":\"one\"\n\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "127.0.0.1:9004",
+        "path": "/quartz/removeJob"
+      },
+      "id": "EFEB166E-581E-4426-8DE0-EA53DD0271EA",
+      "lastModified": "2017-06-14T14:59:47.258+08:00",
+      "name": "移除quartz1",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "\n{\n  \"id\":2,\n  \"group\":\"two\"\n\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "127.0.0.1:9006",
+        "path": "/quartz/removeJob"
+      },
+      "id": "8682D46D-6507-41A2-88B7-EEBE22CB13D3",
+      "lastModified": "2017-06-14T15:00:03.392+08:00",
+      "name": "移除quartz2",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.6.3:9004",
+        "path": "/quartz/shutdown"
+      },
+      "id": "D69CD3F0-7FAA-4154-980A-5C104CD79AF1",
+      "lastModified": "2016-12-25T13:23:00.456+08:00",
+      "name": "终止任务",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "FD09569D-213F-406D-B600-7D216645FD1B"
+    },
+    {
+      "type": "Service",
+      "id": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD",
+      "lastModified": "2017-04-29T12:13:07.545+08:00",
+      "name": "事件",
+      "parentId": "99EECA69-3B08-4907-BE48-8C0372790F6E"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"scheduleEvent\": {\n        \"scheduleId\": 1043,\n        \"typeId\": null,\n        \"title\": \"事件标题\",\n     \t\"des\": \"事件内容\",\n        \"isAllDay\": true,\n        \"isRepeat\": false,\n        \"isHasUser\": true,\n        \"beginTime\": 1484813182408,\n        \"endTime\": 1484813182409,\n        \"cid\": 1\n    },\n    \"scheduleEventUsers\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"事件参与人1名\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"事件参与人名2\",\n            \"shareType\": 0\n        }\n    ],\n  \"scheduleRepeatRule\":{\n    \"repeatType\":1,\n    \"repeatRule\":\"2,3,4,5,6,7,1\",\n    \"repeatBeginDate\":1484813182408,\n    \"repeatEndDate\":1484813182409\n  },\n  \t \"remind\":1,\n  \"custom\":\"2017-4-14 16:43\"\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "127.0.0.1:9004",
+        "path": "/scheduleEvent/addEvent"
+      },
+      "id": "466EB095-7AC0-429B-A006-3BA84B1E6C92",
+      "lastModified": "2017-04-14T16:48:56.141+08:00",
+      "name": "1添加事件",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findEvent"
+      },
+      "id": "210404EE-1129-4FF8-9EFE-93F7C1FDD6ED",
+      "lastModified": "2017-01-19T16:07:02.928+08:00",
+      "name": "2查询我的全部事件",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "typeId",
+              "value": "25"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findTypeEvent"
+      },
+      "id": "D4047551-426D-47FD-A214-AA33B4F854CE",
+      "lastModified": "2017-01-19T16:07:34.781+08:00",
+      "name": "3查询我的全部事件，并且对应类型（不包括一级台历）下的事件列表",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "scheduleId",
+              "value": "1043"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findScheduleEvent"
+      },
+      "id": "10D1C3B3-1C0E-4EDE-8DB9-2D9509F2BD61",
+      "lastModified": "2017-01-19T16:07:57.141+08:00",
+      "name": "4查询我的全部事件，并且对应台历（一级台历）下的事件列表(包括一级台历下的子台历)",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "139"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findEventParticular"
+      },
+      "id": "93EBF3BC-4590-480A-BFA4-FBE6345309BE",
+      "lastModified": "2017-01-19T16:11:10.269+08:00",
+      "name": "5 获取事件详情，根据事件id",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "139"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findRepeatRule"
+      },
+      "id": "AF451D26-1772-4243-993E-C2D2934D821B",
+      "lastModified": "2017-01-19T16:11:27.819+08:00",
+      "name": "6根据事件id查询重复规则",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "140"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/findEventUser"
+      },
+      "id": "708ECDD7-8D40-44AF-844F-BFA11DFCDEF4",
+      "lastModified": "2017-01-19T16:12:01.519+08:00",
+      "name": "7根据事件id查询事件参与人",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"scheduleEvent\": {\n     \t\"id\":139,\n        \"scheduleId\": 1043,\n        \"typeId\": null,\n        \"title\": \"事件标题2\",\n       \t\"des\": \"事件内容描述\",\n        \"isAllDay\": true,\n        \"isRepeat\": true,\n        \"isHasUser\": true,\n        \"beginTime\": 1484813182408,\n        \"endTime\": 1484813182408,\n        \"cid\": 1\n    },\n    \"scheduleEventUsers\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"事件参与人1名\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"事件参与人名2\",\n            \"shareType\": 0\n        }\n    ],\n   \"scheduleRepeatRule\":{\n    \"repeatType\":1,\n    \"repeatRule\":\"2,3,4,5,6,7,1\",\n    \"repeatBeginDate\":1484813182408,\n    \"repeatEndDate\":1484813182408\n  },\n  \t\"remind\":0,\n \t\"custom\":\"11:30\"\n  \t\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/scheduleEvent/updateEvent"
+      },
+      "id": "ECBC71EC-80EC-43A5-833F-39DAA5362FED",
+      "lastModified": "2017-02-09T14:37:35.243+08:00",
+      "name": "8修改事件",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "eventId",
+              "value": "139"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleEvent/deleteEvent"
+      },
+      "id": "7AD3781F-7440-4722-A447-CA40A8B71CF6",
+      "lastModified": "2017-01-19T16:12:51.744+08:00",
+      "name": "9删除事件",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "2597A021-BCD7-4EC5-B5D2-5E741795FCDD"
+    },
+    {
+      "type": "Service",
+      "id": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC",
+      "lastModified": "2017-04-29T12:16:01.513+08:00",
+      "name": "类型",
+      "parentId": "99EECA69-3B08-4907-BE48-8C0372790F6E"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"typeName\": \"类型4\",\n    \"cid\": 1\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleType/addScheduleType"
+      },
+      "id": "44B65202-0714-41CC-A393-F9F566AB87A1",
+      "lastModified": "2017-01-19T15:08:31.748+08:00",
+      "name": "1.添加台历类型",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"typeName\": \"车l\",\n    \"cid\": 1\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.26:9004",
+        "path": "/scheduleType/findScheduleType"
+      },
+      "id": "69FFC1C3-4B88-4639-86BA-4F4FE6AB5FB8",
+      "lastModified": "2017-03-27T15:16:37.911+08:00",
+      "name": "2获取台历类型列表",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"typeName\": \"车l\",\n    \"cid\": 1\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "typeId",
+              "value": "25"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleType/findScheduleTypeParticular"
+      },
+      "id": "59572560-0552-4544-BEF6-E1AADC863220",
+      "lastModified": "2017-01-19T15:11:24.917+08:00",
+      "name": "3获取类型详情",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \t\"id\":25,\n    \"typeName\": \"类型1\",\n    \"cid\": 1\n  \t\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/scheduleType/updateScheduleType"
+      },
+      "id": "B27F3D6A-61E3-4481-BB7B-D32A128D5C10",
+      "lastModified": "2017-01-17T14:58:04.077+08:00",
+      "name": "4修改台历类型",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n  \t\"id\":1,\n    \"typeName\": \"车1\",\n    \"cid\": 1\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "scheduleTypeId",
+              "value": "28"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "15"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/scheduleType/deleteScheduleType"
+      },
+      "id": "7F72768D-5A1C-4197-8471-FB80DCB97DA5",
+      "lastModified": "2017-01-19T15:49:24.786+08:00",
+      "name": "5删除台历类型",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1C2DD7CA-40D4-415E-9FE4-C718694C71FC"
+    },
+    {
+      "type": "Scenario",
+      "id": "1DF64009-6425-440A-9CF6-9F57F1DB5A30",
+      "lastModified": "2017-04-29T12:09:24.073+08:00",
+      "name": "台历",
+      "requestOrder": [
+        "1.添加台历",
+        "2根据类型查询台历（类型下的一级台历和事件）",
+        "3获取台历详情，根据台历id",
+        "4获取台历共享人，根据台历id",
+        "5修改台历",
+        "6逻辑 删除台历",
+        "获取'共享台历'列表",
+        "获取'我的台历'列表"
+      ],
+      "parentId": "99EECA69-3B08-4907-BE48-8C0372790F6E"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n        \"parentId\": null,\n        \"typeId\": 25,\n        \"name\": \"台历名字1\",\n        \"des\": \"描述\",\n        \"cid\": 1\n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 0\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.18:9004",
+        "path": "/schedule/addSchedule"
+      },
+      "id": "A9677946-48C9-4B4E-80AF-CF4336992957",
+      "lastModified": "2017-02-23T14:21:05.384+08:00",
+      "name": "1.添加台历",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n        \"parentId\": 0,\n        \"typeId\": 1,\n        \"name\": \"台历名字\",\n        \"des\": \"描述\",\n        \"cid\": 1\n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 1\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "typeId",
+              "value": "25"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/schedule/findTypeSchedule"
+      },
+      "id": "7C0ED641-EAE4-44D6-87BA-FCB2C04AA6D4",
+      "lastModified": "2017-01-17T15:22:00.110+08:00",
+      "name": "2根据类型查询台历（类型下的一级台历和事件）",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n        \"parentId\": 0,\n        \"typeId\": 1,\n        \"name\": \"台历名字\",\n        \"des\": \"描述\",\n        \"cid\": 1\n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 1\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "scheduleId",
+              "value": "1043"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.15:9004",
+        "path": "/schedule/findScheduleDetail"
+      },
+      "id": "F534CEA9-893F-4E3E-9F4A-C87254584E8C",
+      "lastModified": "2017-02-13T20:46:27.638+08:00",
+      "name": "3获取台历详情，根据台历id",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n        \"parentId\": 0,\n        \"typeId\": 1,\n        \"name\": \"台历名字\",\n        \"des\": \"描述\",\n        \"cid\": 1\n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 1\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "scheduleId",
+              "value": "1043"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/schedule/findScheduleShare"
+      },
+      "id": "AFD66472-13FF-4B43-A0D8-7C45E35B7226",
+      "lastModified": "2017-01-17T15:18:52.591+08:00",
+      "name": "4获取台历共享人，根据台历id",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n      \"id\":1043,\n        \"parentId\": null,\n        \"typeId\": 25,\n        \"name\": \"台历名字1\",\n        \"des\": \"描述\",\n        \"cid\": 1\n      \n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 0\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/schedule/updateSchedule"
+      },
+      "id": "EBD84773-D80F-4F60-90D9-3566A3286BB2",
+      "lastModified": "2017-01-17T15:24:17.385+08:00",
+      "name": "5修改台历",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true,
+        "textBody": "{\n    \"schedule\": {\n      \"id\":1,\n        \"parentId\": 0,\n        \"typeId\": 1,\n        \"name\": \"台历名字\",\n        \"des\": \"描述\",\n        \"cid\": 1\n    },\n    \"scheduleShares\": [\n        {\n            \"shareId\": 1,\n            \"shareName\": \"对象名1\",\n            \"shareType\": 0\n        },\n        {\n            \"shareId\": 2,\n            \"shareName\": \"对象名2\",\n            \"shareType\": 1\n        }\n    ]\n}"
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "scheduleId",
+              "value": "1043"
+            },
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.11:9004",
+        "path": "/schedule/deleteSchedule"
+      },
+      "id": "F2E0C703-3AB2-4A74-89A8-E6E961EC4354",
+      "lastModified": "2017-01-17T15:26:38.394+08:00",
+      "name": "6逻辑 删除台历",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/schedule/findShareSchedule"
+      },
+      "id": "83E23F2E-CB98-41A2-9332-67F60437D52E",
+      "lastModified": "2017-01-19T16:04:48.923+08:00",
+      "name": "获取'共享台历'列表",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "bodyType": "Text",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "companyId",
+              "value": "1"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "10.69.5.22:9004",
+        "path": "/schedule/findOwnerSchedule"
+      },
+      "id": "A0F899BD-7C13-4DCB-9144-7B4C8C1CE3E1",
+      "lastModified": "2017-01-19T16:05:22.865+08:00",
+      "name": "获取'我的台历'列表",
+      "headers": [],
+      "metaInfo": {
+        "ownerId": "auth0|583bcb3c83412a6276fa5e31"
+      },
+      "parentId": "1DF64009-6425-440A-9CF6-9F57F1DB5A30"
+    }
+  ]
+}
